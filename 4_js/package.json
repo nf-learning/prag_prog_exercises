@@ -1,0 +1,17 @@
+{
+  "name": "4",
+  "version": "1.0.0",
+  "description": "PragProg Exercise 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
