@@ -1,6 +1,6 @@
-# Exercise 4
+# Exercise 4 & 5
 
-## Exercise
+## Exercise 4
 We want to implement a mini-language to control a turtle-graphics system. The language consists of single-letter commands, some followed by a simple number.
 For example the following input would draw a rectangle:
 
@@ -14,6 +14,7 @@ U   # pen up
 
 Implement the code that parses this language. It should be designed so that it is simple to add new commands
 
+(Ex 5)  - Implement it again as an internal language
 ---
 
 ## Solution

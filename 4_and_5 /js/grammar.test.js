@@ -1,7 +1,8 @@
 import { parse, SyntaxError } from "./grammar";
+import { runCmd } from "./turtle";
 
 
-describe("Test Commands", () => {
+describe("Test Command Parsing", () => {
   test("Move", () => {
     expect(parse("N 5")).toStrictEqual({ "type": "N", "distance": 5 });
   });
@@ -15,3 +16,4 @@ describe("Test Commands", () => {
     expect(() => { parse("A") }).toThrow(SyntaxError);
   });
 });
+
