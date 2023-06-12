@@ -2,4 +2,4 @@
 
 Solutions to challenges from Pragmatic Programmers
 
-1. 
+View README's in each folder for details/
