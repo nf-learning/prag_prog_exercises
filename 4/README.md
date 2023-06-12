@@ -1,4 +1,6 @@
 # Exercise 4
+
+## Exercise
 We want to implement a mini-language to control a turtle-graphics system. The language consists of single-letter commands, some followed by a simple number.
 For example the following input would draw a rectangle:
 
@@ -12,3 +14,10 @@ U   # pen up
 
 Implement the code that parses this language. It should be designed so that it is simple to add new commands
 
+---
+
+## Solution
+Peg grammar to return an object with the parsed command and arguments
+
+## Execution
+npm test
