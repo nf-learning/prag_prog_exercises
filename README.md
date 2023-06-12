@@ -1,2 +1,5 @@
-# prag_prog_exercises
+# Pragmatic Programmer Exercises
+
 Solutions to challenges from Pragmatic Programmers
+
+1. 
