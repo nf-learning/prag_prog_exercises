@@ -3,26 +3,29 @@
  */
 package timebnf;
 
-import org.antlr.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 public class App {
 
 
     public static void main(String[] args) {
-
+        new App().getMinutesAfterMidnight("00:04 pm");
     }
 
+//TODO Change implementation to use java.time package and move time validation out of the listener an
+// and into a getParsedTime which returns a time object or throws an error
     public int getMinutesAfterMidnight(String time){
         CodePointCharStream inputStream = CharStreams.fromString(time);
         TimeLexer lexer = new TimeLexer(inputStream);
         TokenStream tokens = new CommonTokenStream(lexer);
         TimeParser parser = new TimeParser(tokens);
         TimeParser.TimeContext timeContext = parser.time();
-
-        return -1;
+        TimeListenerImpl listener = new TimeListenerImpl();
+        ParseTreeWalker.DEFAULT.walk(listener, timeContext);
+        return listener.getMinutesAfterMidnight();
     }
 }

@@ -6,10 +6,9 @@
 * way to fix this once I learn more of ANTLR.
 */
 grammar Time;
-prog:   time EOF;
-time:   hour AMPM
+time:   hour am_pm
     |   hour ':' minute
-    |   hour ':' minute AMPM
+    |   hour ':' minute am_pm
     ;
 
 hour:  DIGIT
@@ -18,10 +17,14 @@ hour:  DIGIT
 
 minute: DIGIT DIGIT;
 
-
+am_pm: AM | PM;
+AM: A M;
+PM: P M;
 DIGIT: [0-9];
-AMPM:   'AM'|'am'
-    |   'PM'|'pm'
-    ;
+
+fragment A: ('A' | 'a');
+fragment M: 'M' | 'm';
+fragment P: 'P' | 'p';
+
 WS: [\r\n ]+ -> skip;
 

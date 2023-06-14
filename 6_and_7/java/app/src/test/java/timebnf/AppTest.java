@@ -7,8 +7,31 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void _12_01() {
+    @Test void valid24HourTime() {
         App classUnderTest = new App();
-        assertEquals(classUnderTest.getMinutesAfterMidnight("12:01"),1);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("00:01"), 1);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("00:59"), 59);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("07:01"), 421);
     }
+    @Test void invalid24HourTime() {
+        App classUnderTest = new App();
+        assertThrows(RuntimeException.class, ()-> classUnderTest.getMinutesAfterMidnight("07:77"));
+        assertThrows(RuntimeException.class, ()-> classUnderTest.getMinutesAfterMidnight("24:41"));
+    }
+
+    @Test void validAMPMTime() {
+        App classUnderTest = new App();
+        assertEquals(classUnderTest.getMinutesAfterMidnight("00:01 am"), 1);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("00:59 am"), 59);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("07:01 am "), 421);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("07:01 pm "), 1141);
+
+    }
+
+    @Test void invalidAMPMTime() {
+        App classUnderTest = new App();
+        assertThrows(RuntimeException.class, ()->classUnderTest.getMinutesAfterMidnight("13:01 am"));
+
+    }
+
 }
