@@ -14,8 +14,10 @@ U   # pen up
 
 Implement the code that parses this language. It should be designed so that it is simple to add new commands
 
-(Ex 5)  - Implement it again as an internal language
 ---
+
+## Exercise 5
+Implement it again as an internal language
 
 ## Solution
 Peg grammar to return an object with the parsed command and arguments
