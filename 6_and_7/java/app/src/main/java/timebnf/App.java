@@ -3,12 +3,26 @@
  */
 package timebnf;
 
+import org.antlr.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CodePointCharStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.TokenStream;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+    }
+
+    public int getMinutesAfterMidnight(String time){
+        CodePointCharStream inputStream = CharStreams.fromString(time);
+        TimeLexer lexer = new TimeLexer(inputStream);
+        TokenStream tokens = new CommonTokenStream(lexer);
+        TimeParser parser = new TimeParser(tokens);
+        TimeParser.TimeContext timeContext = parser.time();
+
+        return -1;
     }
 }

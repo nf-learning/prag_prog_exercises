@@ -9,6 +9,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'antlr'
+    id 'idea'
 }
 
 repositories {
@@ -18,10 +20,37 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
+    testImplementation(platform('org.junit:junit-bom:5.9.1'))
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+    implementation "org.antlr:antlr4-runtime:4.13.0"
+    antlr "org.antlr:antlr4:4.13.0"
+
+}
+
+generateGrammarSource {
+    maxHeapSize = "128m"
+    arguments += ['-package','timebnf', '-visitor']
+}
+
+compileJava.dependsOn generateGrammarSource
+
+sourceSets {
+    generated {
+        java.srcDir 'generated-src/antlr/main/timebnf'
+    }
+}
+
+clean {
+    delete "generated-src"
+}
+
+idea {
+    module {
+        sourceDirs+= file("generated-src/antlr/main")
+    }
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -39,4 +68,7 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
