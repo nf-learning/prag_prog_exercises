@@ -15,8 +15,9 @@ Implement a parser for the BNF grammar using a PEG parser generator in the
 language of your choice. Output should be an integer containing the number of
 minutes past midnight.
 
----
 
-## Solution
+### Solution
+[Java](./java) solution using ANTLR Listener
 
-## Execution
+### Execution
+./gradlew test
