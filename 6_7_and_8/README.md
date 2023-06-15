@@ -21,3 +21,13 @@ minutes past midnight.
 
 ### Execution
 ./gradlew test
+
+## Exercise 8 
+Implement the time parser using a scripting language and regular expressions
+
+
+### Solution
+[Python](./python) solution using regexes
+
+### Execution
+./python time_tests.py
