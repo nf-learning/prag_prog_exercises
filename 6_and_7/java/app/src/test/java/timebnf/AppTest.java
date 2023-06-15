@@ -25,7 +25,9 @@ class AppTest {
         assertEquals(classUnderTest.getMinutesAfterMidnight("00:59 am"), 59);
         assertEquals(classUnderTest.getMinutesAfterMidnight("07:01 am "), 421);
         assertEquals(classUnderTest.getMinutesAfterMidnight("07:01 pm "), 1141);
-
+        assertEquals(classUnderTest.getMinutesAfterMidnight("4pm"), 960);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("12:00 am"), 0);
+        assertEquals(classUnderTest.getMinutesAfterMidnight("12:00 pm"), 720);
     }
 
     @Test void invalidAMPMTime() {
