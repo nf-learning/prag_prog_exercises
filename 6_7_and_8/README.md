@@ -1,4 +1,4 @@
-# Exercise 6 and 7
+# Exercise 6,7 and 8
 
 ## Exercise 6
 Design a BNF grammar to parse a time specification. All of the following 
