@@ -1,6 +1,0 @@
-command = SelectPen / PressPen / MovePen
-SelectPen = selectCmd:[P] space size:[1-9] {return {type:selectCmd, size:parseInt(size,10)}}
-PressPen = pressCmd:[DU] { return {type:pressCmd}}
-MovePen = moveCmd:[NSEW] space distance:(integer) { return { type:moveCmd, distance:distance} }
-integer = digits:[0-9]+ {return parseInt(digits.join(),10)}
-space = [ ]
