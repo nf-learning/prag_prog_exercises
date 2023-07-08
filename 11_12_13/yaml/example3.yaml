@@ -1,0 +1,13 @@
+---
+- name: Apple
+  color: red
+  origin: USA
+  price: 0.5
+- name: Banana
+  color: yellow
+  origin: Ecuador
+  price: 0.25
+- name: Orange
+  color: orange
+  origin: Spain
+  price: 0.3

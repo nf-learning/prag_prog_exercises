@@ -1,0 +1,20 @@
+{
+    "title": "My Task List",
+    "tasks": [
+        {
+            "description": "Buy groceries",
+            "priority": "high",
+            "completed": false
+        },
+        {
+            "description": "Clean the house",
+            "priority": "medium",
+            "completed": true
+        },
+        {
+            "description": "Pay bills",
+            "priority": "low",
+            "completed": false
+        }
+    ]
+}

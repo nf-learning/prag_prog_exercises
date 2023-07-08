@@ -1,0 +1,8 @@
+---
+website:
+  title: My Website
+  url: https://www.example.com
+  author: John Smith
+  meta:
+    description: This is my personal website.
+    keywords: [blog, personal, portfolio]
