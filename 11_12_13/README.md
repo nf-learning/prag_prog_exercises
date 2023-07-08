@@ -7,7 +7,7 @@ need to b turned into .json. Write a script that takes a directory and converts 
 .yaml file into a corresponding .json file.
 
 ### Solution
-
+[yaml_to_json.py](./yaml_to_json.py)
 ---
 
 ## Exercise 12
