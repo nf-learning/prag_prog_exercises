@@ -11,8 +11,15 @@ need to b turned into .json. Write a script that takes a directory and converts 
 ---
 
 ## Exercise 12
+Your team initially chose to use camelCase names for variables, but then changed their
+collective mind and switched to snake_case. Write a script that scans all the source
+files for camelCase names and reports on them.
 
 ### Solution
+It's more robust to use a parser since this should alter variables only and not 
+just any camelCase text, method names etc. Going with the less robust script which
+is what the exercise asks for.
+[camel_case_finder.py](./camel_case_finder.py)
 
 ---
 
